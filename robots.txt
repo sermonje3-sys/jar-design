@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sermonje3-sys.github.io/jar-design/sitemap.xml

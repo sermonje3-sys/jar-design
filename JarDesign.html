@@ -576,9 +576,176 @@
       gap: 2rem;
     }
   }
+
+  /* ---- Brand intro animation ---- */
+  #brand-intro{
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: var(--walnut);
+    opacity: 1;
+    transition: opacity 0.6s ease;
+  }
+  #brand-intro.intro-hidden{
+    opacity: 0;
+    pointer-events: none;
+  }
+  #brand-intro .intro-scene{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    opacity: 0;
+  }
+  #brand-intro .intro-scene.intro-active{
+    opacity: 1;
+  }
+  #brand-intro .intro-glow{
+    position: absolute;
+    left: 50%;
+    top: 38%;
+    width: 900px;
+    height: 900px;
+    margin-left: -450px;
+    margin-top: -450px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #B08D5733 0%, transparent 70%);
+    transform: scale(1);
+    transition: transform 3s linear;
+  }
+  #brand-intro .intro-scene-marca .intro-glow{
+    transform: scale(1.02);
+    transition: transform 3.5s linear;
+  }
+  #brand-intro .intro-scene.intro-active .intro-glow.intro-grow{
+    transform: scale(1.06);
+  }
+  #brand-intro .intro-scene-marca.intro-active .intro-glow.intro-grow{
+    transform: scale(1.08);
+  }
+  #brand-intro .intro-content{
+    position: relative;
+    text-align: center;
+  }
+  #brand-intro .intro-tagline{
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--cream-dark);
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.9s cubic-bezier(0.33,1,0.68,1), transform 0.9s cubic-bezier(0.33,1,0.68,1);
+  }
+  #brand-intro .intro-divider{
+    margin: 22px auto 0;
+    width: 0;
+    height: 3px;
+    background: var(--brass);
+    transition: width 0.84s cubic-bezier(0.65,0,0.35,1);
+  }
+  #brand-intro .intro-tagline.intro-in, #brand-intro .intro-wordmark.intro-in, #brand-intro .intro-subtitle.intro-in{
+    opacity: 1;
+    transform: translateY(0);
+  }
+  #brand-intro .intro-divider.intro-in{
+    width: 120px;
+  }
+  #brand-intro .intro-wordmark{
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 96px;
+    color: var(--cream);
+    letter-spacing: 0.01em;
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 1.12s cubic-bezier(0.33,1,0.68,1), transform 1.12s cubic-bezier(0.33,1,0.68,1);
+  }
+  #brand-intro .intro-divider2{
+    margin: 26px auto 0;
+    width: 0;
+    height: 4px;
+    background: var(--brass);
+    transition: width 0.77s cubic-bezier(0.65,0,0.35,1);
+  }
+  #brand-intro .intro-divider2.intro-in{
+    width: 140px;
+  }
+  #brand-intro .intro-subtitle{
+    margin-top: 26px;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 24px;
+    color: var(--cream-dark);
+    letter-spacing: 0.03em;
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.84s cubic-bezier(0.33,1,0.68,1), transform 0.84s cubic-bezier(0.33,1,0.68,1);
+  }
+  @media (max-width: 640px){
+    #brand-intro .intro-wordmark{ font-size: 56px; }
+    #brand-intro .intro-tagline{ font-size: 16px; }
+    #brand-intro .intro-subtitle{ font-size: 18px; }
+  }
 </style>
 </head>
 <body>
+
+<div id="brand-intro">
+  <div class="intro-scene intro-scene-ambiente">
+    <div class="intro-glow"></div>
+    <div class="intro-content">
+      <div class="intro-tagline">Centro de Diseño y Arquitectura</div>
+      <div class="intro-divider"></div>
+    </div>
+  </div>
+  <div class="intro-scene intro-scene-marca">
+    <div class="intro-glow"></div>
+    <div class="intro-content">
+      <div class="intro-wordmark">JAR Design</div>
+      <div class="intro-divider2"></div>
+      <div class="intro-subtitle">Muebles de diseño propio y línea Solattu</div>
+    </div>
+  </div>
+</div>
+<script>
+  (function(){
+    var root = document.getElementById('brand-intro');
+    var ambiente = root.querySelector('.intro-scene-ambiente');
+    var marca = root.querySelector('.intro-scene-marca');
+    var tagline = root.querySelector('.intro-tagline');
+    var divider = root.querySelector('.intro-divider');
+    var wordmark = root.querySelector('.intro-wordmark');
+    var divider2 = root.querySelector('.intro-divider2');
+    var subtitle = root.querySelector('.intro-subtitle');
+
+    document.body.style.overflow = 'hidden';
+
+    function at(ms, fn){ setTimeout(fn, ms); }
+
+    ambiente.classList.add('intro-active');
+    at(20, function(){ ambiente.querySelector('.intro-glow').classList.add('intro-grow'); });
+    at(450, function(){ tagline.classList.add('intro-in'); });
+    at(960, function(){ divider.classList.add('intro-in'); });
+
+    at(3000, function(){
+      ambiente.classList.remove('intro-active');
+      marca.classList.add('intro-active');
+      marca.querySelector('.intro-glow').classList.add('intro-grow');
+    });
+    at(3020, function(){ wordmark.classList.add('intro-in'); });
+    at(3980, function(){ divider2.classList.add('intro-in'); });
+    at(4680, function(){ subtitle.classList.add('intro-in'); });
+
+    at(6500, function(){
+      root.classList.add('intro-hidden');
+      document.body.style.overflow = '';
+    });
+    at(7150, function(){
+      root.remove();
+    });
+  })();
+</script>
 
 <header id="hero-header">
   <a class="hero-contact" href="https://wa.me/573175140460?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20los%20muebles%20de%20JAR%20Design." target="_blank" rel="noopener">

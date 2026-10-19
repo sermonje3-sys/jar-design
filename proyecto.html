@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto — JAR Design</title>
+  <meta name="description" content="Proyecto especial de JAR Design: fotos y detalles del espacio.">
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="inicio.css">
+</head>
+<body class="pagina-proyecto">
+
+  <!-- ================= MENÚ ================= -->
+  <header class="menu-fijo menu-fijo--visible">
+    <a href="inicio.html" class="menu-fijo__logo"><img src="img/logo-jar-nogal.png" alt="JAR Design"></a>
+    <nav class="menu-fijo__nav" aria-label="Secciones">
+      <a href="inicio.html">Inicio</a>
+      <a href="inicio.html#catalogo">Catálogo</a>
+      <a href="proyectos.html" aria-current="page">Proyectos</a>
+      <a href="inicio.html#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ================= BANNER DEL PROYECTO ================= -->
+    <section class="proyecto-portada">
+      <img id="proyectoPortadaImg" src="" alt="">
+      <div class="proyecto-portada__texto">
+        <p class="proyecto__meta" id="proyectoMeta"></p>
+        <h1 class="proyecto__nombre" id="proyectoNombre"></h1>
+      </div>
+    </section>
+
+    <!-- ================= DESCRIPCIÓN ================= -->
+    <div class="proyecto-descripcion">
+      <div class="proyecto-descripcion__contenido">
+        <a href="proyectos.html" class="volver"><span aria-hidden="true">←</span> Todos los proyectos</a>
+        <div class="proyecto-texto" id="proyectoTexto"></div>
+      </div>
+    </div>
+
+    <!-- ================= GALERÍA (MOSAICO) ================= -->
+    <section class="galeria-proyecto" aria-label="Fotos del proyecto">
+      <div class="mosaico" id="mosaico"></div>
+    </section>
+
+    <!-- ================= CIERRE ================= -->
+    <section class="seccion proyecto-final">
+      <h2 class="seccion__titulo">¿Te gustó este <em>proyecto?</em></h2>
+      <p class="seccion__intro">Cuéntanos tu idea y diseñamos el tuyo.</p>
+      <a class="boton boton--whatsapp" id="proyectoWhatsapp" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-3.1.8.8-3-.2-.3A8 8 0 1112 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.7.9-.3.2-.5.1a6.5 6.5 0 01-1.9-1.2 7.2 7.2 0 01-1.3-1.6c-.1-.2 0-.3.1-.4l.3-.4.2-.3a.5.5 0 000-.5c-.1-.1-.5-1.3-.7-1.8s-.4-.4-.5-.4h-.5a.9.9 0 00-.6.3 2.8 2.8 0 00-.9 2.1 4.9 4.9 0 001 2.6 11.2 11.2 0 004.6 4.1c.6.3 1.1.4 1.5.6a3.6 3.6 0 001.6.1 2.6 2.6 0 001.7-1.2 2.1 2.1 0 00.2-1.2c-.1-.1-.2-.2-.5-.3z"/></svg>
+        Quiero un proyecto así
+      </a>
+
+      <nav class="proyecto-nav" aria-label="Otros proyectos">
+        <a class="proyecto-nav__enlace" id="proyectoAnterior" href="#">
+          <span>← Anterior</span>
+          <strong></strong>
+        </a>
+        <a class="proyecto-nav__todos" href="proyectos.html">Todos los proyectos</a>
+        <a class="proyecto-nav__enlace proyecto-nav__enlace--siguiente" id="proyectoSiguiente" href="#">
+          <span>Siguiente →</span>
+          <strong></strong>
+        </a>
+      </nav>
+    </section>
+  </main>
+
+  <!-- ================= PIE DE PÁGINA ================= -->
+  <footer class="pie">
+    <div class="pie__contenido">
+      <div class="pie__marca">
+        <a href="inicio.html" class="logo"><img src="img/logo-jar-crema.png" alt="JAR Design"></a>
+        <p>Centro de Diseño Personalizado<br>by John Rodríguez</p>
+      </div>
+
+      <nav class="pie__enlaces" aria-label="Secciones">
+        <a href="inicio.html#catalogo">Catálogo</a>
+        <a href="inicio.html#nosotros">Nosotros</a>
+        <a href="proyectos.html" aria-current="page">Proyectos</a>
+        <a href="inicio.html#contacto">Contacto</a>
+      </nav>
+
+      <div class="pie__redes">
+        <a href="https://www.instagram.com/jar.designcenter/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg class="icono-linea" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="0.6" /></svg>
+        </a>
+        <a href="https://wa.me/573175140460" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-3.1.8.8-3-.2-.3A8 8 0 1112 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.7.9-.3.2-.5.1a6.5 6.5 0 01-1.9-1.2 7.2 7.2 0 01-1.3-1.6c-.1-.2 0-.3.1-.4l.3-.4.2-.3a.5.5 0 000-.5c-.1-.1-.5-1.3-.7-1.8s-.4-.4-.5-.4h-.5a.9.9 0 00-.6.3 2.8 2.8 0 00-.9 2.1 4.9 4.9 0 001 2.6 11.2 11.2 0 004.6 4.1c.6.3 1.1.4 1.5.6a3.6 3.6 0 001.6.1 2.6 2.6 0 001.7-1.2 2.1 2.1 0 00.2-1.2c-.1-.1-.2-.2-.5-.3z"/></svg>
+        </a>
+      </div>
+    </div>
+    <p class="pie__final">© 2026 JAR Design · Calle 109 # 15-79, Local 2, Bogotá</p>
+  </footer>
+
+  <!-- ================= VISOR DE FOTOS ================= -->
+  <dialog class="visor" id="visor" aria-label="Foto ampliada">
+    <img class="visor__foto" id="visorFoto" src="" alt="">
+    <p class="visor__contador" id="visorContador"></p>
+    <button type="button" class="visor__boton visor__cerrar" id="visorCerrar" aria-label="Cerrar" autofocus>&times;</button>
+    <button type="button" class="visor__boton visor__flecha visor__flecha--anterior" id="visorAnterior" aria-label="Foto anterior">&#8249;</button>
+    <button type="button" class="visor__boton visor__flecha visor__flecha--siguiente" id="visorSiguiente" aria-label="Foto siguiente">&#8250;</button>
+  </dialog>
+
+  <!-- Botón flotante: volver a la lista de proyectos -->
+  <a class="btn-volver" href="proyectos.html">
+    <span aria-hidden="true">←</span>
+    Proyectos
+  </a>
+
+  <!-- Botón flotante: Contáctanos -->
+  <a class="btn-flotante"
+     href="https://wa.me/573175140460?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20JAR%20Design."
+     target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-3.1.8.8-3-.2-.3A8 8 0 1112 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.7.9-.3.2-.5.1a6.5 6.5 0 01-1.9-1.2 7.2 7.2 0 01-1.3-1.6c-.1-.2 0-.3.1-.4l.3-.4.2-.3a.5.5 0 000-.5c-.1-.1-.5-1.3-.7-1.8s-.4-.4-.5-.4h-.5a.9.9 0 00-.6.3 2.8 2.8 0 00-.9 2.1 4.9 4.9 0 001 2.6 11.2 11.2 0 004.6 4.1c.6.3 1.1.4 1.5.6a3.6 3.6 0 001.6.1 2.6 2.6 0 001.7-1.2 2.1 2.1 0 00.2-1.2c-.1-.1-.2-.2-.5-.3z"/></svg>
+    Contáctanos
+  </a>
+
+  <script src="comun.js"></script>
+  <script src="proyectos-datos.js"></script>
+  <script src="proyecto.js"></script>
+</body>
+</html>

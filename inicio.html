@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JAR Design — Centro de Diseño Personalizado</title>
+  <meta name="description" content="JAR Design — Centro de Diseño Personalizado en Bogotá. Mobiliario personalizado, mobiliario de exterior y cortinas.">
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="inicio.css">
+</head>
+<body>
+
+  <!-- ================= MENÚ FIJO ================= -->
+  <!-- Aparece arriba cuando la portada desaparece -->
+  <header class="menu-fijo" id="menuFijo">
+    <a href="#inicio" class="menu-fijo__logo"><img src="img/logo-jar-nogal.png" alt="JAR Design"></a>
+    <nav class="menu-fijo__nav" aria-label="Secciones">
+      <a href="#catalogo">Catálogo</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#testimonios">Testimonios</a>
+      <a href="proyectos.html">Proyectos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- ================= PORTADA ================= -->
+  <!-- Se queda fija arriba y se desvanece al bajar -->
+  <section class="hero" id="inicio">
+
+    <!-- Imagen de algún proyecto (de fondo) -->
+    <div class="hero__fondo" aria-hidden="true"></div>
+
+    <!-- Encabezado: logo + botones -->
+    <header class="header">
+      <a href="#inicio" class="logo"><img src="img/logo-jar-crema.png" alt="JAR Design"></a>
+      <nav class="nav">
+        <a href="#contacto" class="nav__btn">Contacto</a>
+        <a href="proyectos.html" class="nav__btn nav__btn--destacado">Proyectos</a>
+      </nav>
+    </header>
+
+    <!-- Texto central -->
+    <div class="hero__contenido">
+      <p class="hero__firma">by John Rodríguez</p>
+      <h1 class="hero__titulo">
+        Centro de Diseño
+        <em>Personalizado</em>
+      </h1>
+      <p class="hero__subtitulo">
+        <span>Mobiliario personalizado</span>
+        <span>Mobiliario de exterior</span>
+        <span>Cortinas</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= CONTENIDO ================= -->
+  <!-- Sube por encima de la portada, empezando con el difuminado -->
+  <div class="contenido">
+
+    <!-- Difuminado blanco: la foto se desvanece hacia abajo -->
+    <div class="difuminado" aria-hidden="true"></div>
+
+    <!-- Indicador para bajar -->
+    <a href="#catalogo" class="bajar">
+      Ver catálogo
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16m0 0l-6-6m6 6l6-6" /></svg>
+    </a>
+
+    <!-- ================= CATÁLOGO ================= -->
+    <section class="seccion catalogo" id="catalogo">
+
+      <!-- Título con línea recta -->
+      <div class="catalogo__encabezado">
+        <h2 class="catalogo__titulo"><img src="img/logo-jar-nogal.png" alt="JAR Design"></h2>
+        <div class="linea-titulo" aria-hidden="true"></div>
+      </div>
+
+      <!-- Isla de categorías -->
+      <div class="categorias">
+        <div class="isla" role="group" aria-label="Categorías del catálogo">
+          <button type="button" class="isla__opcion" data-grupo="mobiliario" aria-pressed="false" aria-expanded="false" aria-controls="subIsla">
+            Mobiliario
+            <svg class="isla__flecha" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3" /></svg>
+          </button>
+          <button type="button" class="isla__opcion" data-categoria="exterior" aria-pressed="false"><span class="solo-escritorio">Mueble </span>exterior</button>
+          <button type="button" class="isla__opcion" data-categoria="cortinas" aria-pressed="false">Cortinas</button>
+        </div>
+
+        <!-- Sub-isla: se abre al tocar "Mobiliario" -->
+        <div class="sub-isla" id="subIsla" inert>
+          <div class="sub-isla__marco">
+            <div class="sub-isla__opciones" role="group" aria-label="Tipos de mobiliario">
+              <button type="button" class="sub-isla__opcion" data-categoria="salas" aria-pressed="false">Salas</button>
+              <button type="button" class="sub-isla__opcion" data-categoria="comedores" aria-pressed="false">Comedores</button>
+              <button type="button" class="sub-isla__opcion" data-categoria="mobiliario" aria-pressed="false">Personalizado</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 imágenes de la categoría elegida -->
+      <div class="galeria" id="galeria" aria-live="polite"></div>
+
+      <div class="catalogo__acciones">
+        <button type="button" class="boton boton--contorno" id="verMas" hidden>Ver más</button>
+        <a href="https://wa.me/573175140460?text=Hola%20JAR%20Design%2C%20quiero%20cotizar%20un%20proyecto." class="catalogo__cta" id="catalogoCta" target="_blank" rel="noopener">Cotiza a tu medida</a>
+      </div>
+    </section>
+
+    <!-- ================= NOSOTROS ================= -->
+    <section class="nosotros" id="nosotros">
+      <div class="seccion nosotros__grid">
+        <div class="nosotros__foto">
+          <img src="img/praga.jpg" alt="Comedor Praga, diseño propio de JAR Design" loading="lazy">
+        </div>
+
+        <div class="nosotros__texto">
+          <p class="seccion__eyebrow">Nosotros</p>
+          <h2 class="seccion__titulo">Diseño con <em>nombre propio</em></h2>
+          <p>
+            JAR Design es un centro de diseño en Bogotá de la mano de John Rodríguez. Diseñamos y fabricamos
+            muebles propios, cortinas y mobiliario a la medida, y trabajamos con la línea de exterior Solattu.
+          </p>
+          <p>
+            Cada proyecto empieza escuchando: cómo vives tu espacio, qué te gusta y qué necesitas. A partir de
+            ahí proponemos materiales, acabados y medidas para que el resultado se sienta tuyo.
+          </p>
+
+          <ul class="pilares">
+            <li class="pilar">
+              <span class="pilar__titulo">Diseño propio</span>
+              <span class="pilar__texto">Piezas diseñadas y fabricadas por nosotros.</span>
+            </li>
+            <li class="pilar">
+              <span class="pilar__titulo">A la medida</span>
+              <span class="pilar__texto">Cada mueble se adapta a tu espacio.</span>
+            </li>
+            <li class="pilar">
+              <span class="pilar__titulo">Acompañamiento</span>
+              <span class="pilar__texto">De la primera idea a la instalación.</span>
+            </li>
+          </ul>
+
+          <p class="nosotros__firma">John Rodríguez <span>JAR Design</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TESTIMONIOS ================= -->
+    <!-- OJO: son testimonios DE EJEMPLO con nombres inventados.
+         Reemplázalos por opiniones reales de clientes (con su permiso) antes de publicar. -->
+    <section class="testimonios" id="testimonios">
+      <div class="seccion">
+        <div class="seccion__encabezado">
+          <p class="seccion__eyebrow">Testimonios</p>
+          <h2 class="seccion__titulo">Lo que dicen nuestros <em>clientes</em></h2>
+        </div>
+
+        <div class="testimonios__grid">
+          <figure class="testimonio">
+            <blockquote class="testimonio__texto">
+              Tenía muchas ideas en la cabeza y no sabía por dónde empezar. En JAR Design me ayudaron a
+              ordenarlas y hoy mi casa se siente realmente mía. Me asesoraron con las cortinas y los muebles,
+              y cada detalle quedó impecable. Más que venderme algo, me acompañaron de principio a fin.
+            </blockquote>
+            <figcaption class="testimonio__autor">
+              <span class="testimonio__inicial" aria-hidden="true">M</span>
+              <span>
+                <span class="testimonio__nombre">Mariana G.</span>
+                <span class="testimonio__proyecto">Cortinas y sala · Chicó</span>
+              </span>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonio">
+            <blockquote class="testimonio__texto">
+              Buscábamos un comedor que se adaptara a nuestro espacio y encontramos un equipo que de verdad
+              escucha. Desde la toma de medidas hasta la instalación todo fue claro y a tiempo. Se nota la
+              experiencia y el cuidado que le ponen a cada acabado.
+            </blockquote>
+            <figcaption class="testimonio__autor">
+              <span class="testimonio__inicial" aria-hidden="true">A</span>
+              <span>
+                <span class="testimonio__nombre">Andrés S.</span>
+                <span class="testimonio__proyecto">Comedor a la medida · Usaquén</span>
+              </span>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonio">
+            <blockquote class="testimonio__texto">
+              Diseñaron el clóset y el escritorio de mi apartamento pensando en cómo vivo yo, no en un
+              catálogo. Me mostraron materiales, me explicaron cada opción y el resultado superó lo que
+              imaginaba. Volvería a trabajar con ellos sin dudarlo.
+            </blockquote>
+            <figcaption class="testimonio__autor">
+              <span class="testimonio__inicial" aria-hidden="true">C</span>
+              <span>
+                <span class="testimonio__nombre">Catalina R.</span>
+                <span class="testimonio__proyecto">Mobiliario personalizado · Chía</span>
+              </span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROYECTOS ESPECIALES ================= -->
+    <!-- Banner que lleva a la página de proyectos (proyectos.html) -->
+    <section class="proyectos-portada" id="proyectos">
+      <a href="proyectos.html" class="proyecto proyecto--enlace">
+        <img src="img/proyectos/karibana/05.jpg" alt="" loading="lazy">
+        <span class="proyecto__texto">
+          <span class="proyecto__meta">Lo que hemos creado</span>
+          <span class="proyecto__nombre">Proyectos especiales</span>
+          <span class="proyecto__ver">Ver proyectos <span aria-hidden="true">→</span></span>
+        </span>
+      </a>
+    </section>
+
+    <!-- ================= CONTACTO ================= -->
+    <section class="contacto" id="contacto">
+      <div class="seccion">
+        <div class="seccion__encabezado">
+          <p class="seccion__eyebrow">Contacto</p>
+          <h2 class="seccion__titulo">Visítanos en <em>Bogotá</em></h2>
+          <p class="seccion__intro">Ven a conocer nuestros muebles en persona, o escríbenos y te asesoramos.</p>
+        </div>
+
+        <div class="contacto__grid">
+          <div class="contacto__info">
+            <ul class="datos">
+              <li class="dato">
+                <span class="dato__icono" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0114 0C19 14.8 12 21 12 21z" /><circle cx="12" cy="9.5" r="2.5" /></svg>
+                </span>
+                <div>
+                  <span class="dato__etiqueta">Dirección</span>
+                  <p>Calle 109 # 15-79, Local 2<br>Bogotá, Colombia</p>
+                </div>
+              </li>
+              <li class="dato">
+                <span class="dato__icono" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg>
+                </span>
+                <div>
+                  <span class="dato__etiqueta">Horario de atención</span>
+                  <p>Lunes a sábado: 10:00 a. m. – 7:00 p. m.<br>Domingo: 11:00 a. m. – 5:00 p. m.</p>
+                </div>
+              </li>
+              <li class="dato">
+                <span class="dato__icono" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M3 17L17 3l4 4L7 21z" /><path d="M7 13l2 2M10 10l2 2M13 7l2 2" /></svg>
+                </span>
+                <div>
+                  <span class="dato__etiqueta">Visita para tomar medidas</span>
+                  <p>Sin costo en Bogotá.<br>A las afueras de la ciudad, con costo adicional.</p>
+                </div>
+              </li>
+              <li class="dato">
+                <span class="dato__icono" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2" /></svg>
+                </span>
+                <div>
+                  <span class="dato__etiqueta">Teléfono y WhatsApp</span>
+                  <p><a href="tel:+573175140460">317 514 0460</a></p>
+                </div>
+              </li>
+              <li class="dato">
+                <span class="dato__icono" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="0.6" /></svg>
+                </span>
+                <div>
+                  <span class="dato__etiqueta">Instagram</span>
+                  <p><a href="https://www.instagram.com/jar.designcenter/" target="_blank" rel="noopener">@jar.designcenter</a></p>
+                </div>
+              </li>
+            </ul>
+
+            <div class="contacto__botones">
+              <a class="boton boton--whatsapp" href="https://wa.me/573175140460?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20JAR%20Design." target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-3.1.8.8-3-.2-.3A8 8 0 1112 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.7.9-.3.2-.5.1a6.5 6.5 0 01-1.9-1.2 7.2 7.2 0 01-1.3-1.6c-.1-.2 0-.3.1-.4l.3-.4.2-.3a.5.5 0 000-.5c-.1-.1-.5-1.3-.7-1.8s-.4-.4-.5-.4h-.5a.9.9 0 00-.6.3 2.8 2.8 0 00-.9 2.1 4.9 4.9 0 001 2.6 11.2 11.2 0 004.6 4.1c.6.3 1.1.4 1.5.6a3.6 3.6 0 001.6.1 2.6 2.6 0 001.7-1.2 2.1 2.1 0 00.2-1.2c-.1-.1-.2-.2-.5-.3z"/></svg>
+                Escríbenos
+              </a>
+              <a class="boton boton--contorno" href="https://www.google.com/maps/dir/?api=1&amp;destination=Calle+109+%2315-79+Bogot%C3%A1+Colombia" target="_blank" rel="noopener">Cómo llegar</a>
+            </div>
+          </div>
+
+          <div class="contacto__mapa">
+            <iframe
+              src="https://www.google.com/maps?q=Calle+109+%2315-79,+Bogot%C3%A1,+Colombia&amp;output=embed"
+              title="Mapa: JAR Design, Calle 109 # 15-79, Bogotá"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PIE DE PÁGINA ================= -->
+    <footer class="pie">
+      <div class="pie__contenido">
+        <div class="pie__marca">
+          <a href="#inicio" class="logo"><img src="img/logo-jar-crema.png" alt="JAR Design"></a>
+          <p>Centro de Diseño Personalizado<br>by John Rodríguez</p>
+        </div>
+
+        <nav class="pie__enlaces" aria-label="Secciones">
+          <a href="#catalogo">Catálogo</a>
+          <a href="#nosotros">Nosotros</a>
+          <a href="proyectos.html">Proyectos</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+
+        <div class="pie__redes">
+          <a href="https://www.instagram.com/jar.designcenter/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg class="icono-linea" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="0.6" /></svg>
+          </a>
+          <a href="https://wa.me/573175140460" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-3.1.8.8-3-.2-.3A8 8 0 1112 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.7.9-.3.2-.5.1a6.5 6.5 0 01-1.9-1.2 7.2 7.2 0 01-1.3-1.6c-.1-.2 0-.3.1-.4l.3-.4.2-.3a.5.5 0 000-.5c-.1-.1-.5-1.3-.7-1.8s-.4-.4-.5-.4h-.5a.9.9 0 00-.6.3 2.8 2.8 0 00-.9 2.1 4.9 4.9 0 001 2.6 11.2 11.2 0 004.6 4.1c.6.3 1.1.4 1.5.6a3.6 3.6 0 001.6.1 2.6 2.6 0 001.7-1.2 2.1 2.1 0 00.2-1.2c-.1-.1-.2-.2-.5-.3z"/></svg>
+          </a>
+        </div>
+      </div>
+      <p class="pie__final">© 2026 JAR Design · Calle 109 # 15-79, Local 2, Bogotá</p>
+    </footer>
+  </div>
+
+  <!-- ================= DETALLE DEL MUEBLE ================= -->
+  <dialog class="detalle" id="detalle" aria-labelledby="detalleNombre">
+    <div class="detalle__contenido">
+      <img class="detalle__foto" id="detalleFoto" src="" alt="">
+      <div class="detalle__cuerpo">
+        <span class="etiqueta" id="detalleLinea"></span>
+        <h3 class="detalle__nombre" id="detalleNombre"></h3>
+        <p class="detalle__categoria" id="detalleCategoria"></p>
+        <p class="detalle__precio" id="detallePrecio"></p>
+        <p class="detalle__desc" id="detalleDesc"></p>
+        <a class="boton boton--whatsapp" id="detalleWhatsapp" href="#" target="_blank" rel="noopener">Preguntar por WhatsApp</a>
+      </div>
+    </div>
+    <button type="button" class="detalle__cerrar" id="detalleCerrar" aria-label="Cerrar" autofocus>&times;</button>
+  </dialog>
+
+  <!-- Botón flotante: Contáctanos -->
+  <a class="btn-flotante"
+     href="https://wa.me/573175140460?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20JAR%20Design."
+     target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-3.1.8.8-3-.2-.3A8 8 0 1112 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.7.9-.3.2-.5.1a6.5 6.5 0 01-1.9-1.2 7.2 7.2 0 01-1.3-1.6c-.1-.2 0-.3.1-.4l.3-.4.2-.3a.5.5 0 000-.5c-.1-.1-.5-1.3-.7-1.8s-.4-.4-.5-.4h-.5a.9.9 0 00-.6.3 2.8 2.8 0 00-.9 2.1 4.9 4.9 0 001 2.6 11.2 11.2 0 004.6 4.1c.6.3 1.1.4 1.5.6a3.6 3.6 0 001.6.1 2.6 2.6 0 001.7-1.2 2.1 2.1 0 00.2-1.2c-.1-.1-.2-.2-.5-.3z"/></svg>
+    Contáctanos
+  </a>
+
+  <script src="comun.js"></script>
+  <script src="inicio.js"></script>
+</body>
+</html>
